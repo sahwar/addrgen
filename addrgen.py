@@ -187,5 +187,13 @@ if __name__ == '__main__':
                         help=("Generate the public key address with a different version number."
                         " https://en.bitcoin.it/wiki/List_of_address_prefixes"))
 
+    parser.add_argument("-p", "--passphrase",
+                        help="Generate an address based on a passphrase."
+                        " Surround with quotation marks if it contains spaces.")
+
     args = parser.parse_args()
-    test(args.otherversion)
+
+    if args.passphrase:
+        print get_addr(gen_eckey(passphrase=args.passphrase), args.otherversion)
+    else:
+        test(args.otherversion)

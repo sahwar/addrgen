@@ -1,14 +1,23 @@
-addrgen - Minimal Bitcoin address generator in Python
+## addrgen - minimal Bitcoin address generator in Python
 
-Created and Licensed Public Domain by Joric/bitcoin-dev June 2012 with minor modifications by David Sterry.
+This script generates a single Bitcoin address using the compressed public key format and prints it with its private key.
 
-This script generates a single Bitcoin address and prints it with its private key.
+### Usage 
 
-The Bitcoin address is generated using the compressed public key format.
+    python addrgen.py
 
-If you wish to generate Litecoin or other types of addresses, you can use the --otherversion=48 (or other version number) switch which is supported by pywallet and other low-level tools.
+### Mac OS X
+
+For some reason, the script segfaults on OS X unless it's run in in 32-bit mode. Instead, those on OS X should run:
+
+    bash addrgen.sh
+
+### Generating other types of addresses
+
+Supply the version number for your desired address  with the --otherversion switch. (supported by pywallet at least)
+
+    python addrgen.py --otherversion=48
 
 If you wish to generate addresses based on a passphrase, a given private key, or some other option look at the commented lines in the test() function.
 
-This script was created for You Can Learn Bitcoin by David R. Sterry available from
- [Apple's iBookstore](https://itunes.apple.com/us/book/you-can-learn-bitcoin/id569230042?mt=11), [Barnes & Noble's Nook](http://www.barnesandnoble.com/w/you-can-learn-bitcoin-david-r-sterry/1113581990), [Lulu](http://davidsterry.com/youcan) and for bitcoins (oh the irony) from [CoinDL](https://www.coindl.com/page/item/391).
+Created and Licensed Public Domain by Joric/bitcoin-dev June 2012 with minor modifications by David Sterry.
